@@ -6,3 +6,4 @@ db.sqlite3
 terraform.tfstate*
 *.tfvars
 .terraform/
+.DS_Store
