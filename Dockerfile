@@ -1,5 +1,8 @@
 FROM python:3.12-slim
 
+RUN apt-get update && apt-get upgrade -y --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
@@ -10,7 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN useradd -create-home appuser && chwon -R appuser /app
+RUN useradd -create-home appuser && chown -R appuser /app
 USER appuser
 
 EXPOSE 8000
