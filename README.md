@@ -11,7 +11,7 @@ Built with Django and Django REST Framework, packaged with Docker.
 - Filter items by location: `/api/v1/items/?location=<id>`
 - Location names are unique; deleting a location deletes its items
 - A `/health/` endpoint for load balancer and container health checks
-- 42 automated tests
+- 17 automated tests
 
 ## Endpoints
 
