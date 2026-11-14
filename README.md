@@ -76,6 +76,30 @@ The image runs as a non-root user, applies migrations on start and serves with g
 
 If you push the image to ECR with `docker buildx`, add `--provenance=false` so ECR can scan it.
 
+## Screenshots
+
+**All 17 tests pass**
+
+![17 tests passing](screenshots/01-tests-passing.png)
+
+**Docker image builds** (the `useradd` and `chown` step creates the non-root user)
+
+![Docker build](screenshots/02-docker-build.png)
+
+**Container starts: migrations apply, then gunicorn listens on port 8000**
+
+![Docker run](screenshots/03-docker-run.png)
+
+**Calling the API through the container:** health check, create a location, create an item, list items
+
+![curl through the container](screenshots/04-curl-through-container.png)
+
+**GitHub Actions: `test` and `docker-build` both pass on `main`**
+
+![CI checks passed](screenshots/05-ci-checks-passed.png)
+
+![CI badge showing passing](screenshots/06-ci-badge-passing.png)
+
 ## Configuration
 
 | Variable               | Default               | Purpose                   |
