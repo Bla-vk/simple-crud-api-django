@@ -90,6 +90,10 @@ If you push the image to ECR with `docker buildx`, add `--provenance=false` so E
 
 ![Docker run](screenshots/03-docker-run.png)
 
+**Image size:** 250 MB on disk, 53.7 MB of compressed content
+
+![Docker image size](screenshots/07-docker-image-size.png)
+
 **Calling the API through the container:** health check, create a location, create an item, list items
 
 ![curl through the container](screenshots/04-curl-through-container.png)
