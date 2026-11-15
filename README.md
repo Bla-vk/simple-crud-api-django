@@ -4,6 +4,7 @@
 
 A REST API for tracking **items** and the **locations** they are stored in.
 Built with Django and Django REST Framework, packaged with Docker.
+For a Django vs Flask write-up, see the [comparison in the Flask repo](https://github.com/Bla-vk/simple-crud-api-flask/blob/main/COMPARISON.md).
 
 - Full Create / Read / Update / Delete for items and locations
 - Versioned paths under `/api/v1/`
@@ -89,6 +90,10 @@ If you push the image to ECR with `docker buildx`, add `--provenance=false` so E
 **Container starts: migrations apply, then gunicorn listens on port 8000**
 
 ![Docker run](screenshots/03-docker-run.png)
+
+**Image size:** 250 MB on disk, 53.7 MB of compressed content
+
+![Docker image size](screenshots/07-docker-image-size.png)
 
 **Calling the API through the container:** health check, create a location, create an item, list items
 
